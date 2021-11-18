@@ -5,10 +5,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                   Larapus
+                    Informasi Wisata
                 </div>
                 <div class="card-body">
-                   Selamat Datang di <strong>Larapus</strong>
+                        Selamat datang di  <strong>Informasi Wisata</strong>
                 </div>
             </div>
         </div>

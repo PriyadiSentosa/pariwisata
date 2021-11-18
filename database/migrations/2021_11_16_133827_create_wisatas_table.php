@@ -15,10 +15,7 @@ class CreateWisatasTable extends Migration
     {
         Schema::create('wisatas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_provinsi');
-            $table->string('nama_kota');
-            $table->text('alamat');
-            $table->text('desc');
+            $table->string('nama_wisata');
             $table->timestamps();
         });
     }

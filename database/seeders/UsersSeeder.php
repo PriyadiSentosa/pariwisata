@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Role;
+
 class UsersSeeder extends Seeder
 {
     /**
@@ -14,32 +15,30 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        //Membuat role admin
         $adminRole = new Role();
         $adminRole->name = "admin";
-        $adminRole->display_name = "Admin Larapus";
+        $adminRole->display_name = "Admin Pariwisata";
         $adminRole->save();
 
-        //Membuat role member
+        //membuat the database seed.
         $memberRole = new Role();
         $memberRole->name = "member";
-        $memberRole->display_name = "Member Larapus";
+        $memberRole->display_name = "Member Pariwisata";
         $memberRole->save();
 
-        //Membuat sample user
         $userAdmin = new User;
-        $userAdmin->name = "Admin Larapus";
-        $userAdmin->email = "adminlarapus@gmail.com";
-        $userAdmin->password = bcrypt("rahasia");
+        $userAdmin->name = "Admin Pariwisata";
+        $userAdmin->email = "adminPariwisatas@gmail.com";
+        $userAdmin->password = bcrypt("wisata");
         $userAdmin->save();
         $userAdmin->attachRole($adminRole);
 
-         //Membuat sample member
-         $userMember = new User;
-         $userMember->name = "Member Larapus";
-         $userMember->email = "memberlarapus@gmail.com";
-         $userMember->password = bcrypt("rahasia");
-         $userMember->save();
-         $userMember->attachRole($memberRole);
+        //membuat role member
+        $userMember = new User;
+        $userMember->name = "Member Pariwisata";
+        $userMember->email = "member@gmail.com";
+        $userMember->password = bcrypt("wisata");
+        $userMember->save();
+        $userMember->attachRole($memberRole);
     }
 }

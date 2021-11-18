@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\wisata;
+use App\Models\destinasi;
 use Illuminate\Database\Seeder;
 
-class DestinasiSeeder extends Seeder
+class Destinasiseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +15,6 @@ class DestinasiSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }

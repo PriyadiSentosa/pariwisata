@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\WisataController;
+use App\Http\Controllers\DestinasiController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +25,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
-// Admin Route
-Route::group(['prefix'=>'admin','middleware'=> ['auth', 'role:admin']],function () {
-  Route::get('/',function(){
-    return view('admin.index');
-  });
-  Route::resource('author', AuthorController::class);
-  Route::resource('books', BookController::class);
+//admin Ruote
+Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function (){
+    Route::get('/', function (){
+        return view('admin.index');
+    });
+    Route::resource('wisata', WisataController::class);
+    Route::resource('destinasi', DestinasiController::class);
+
 });
-

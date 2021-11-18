@@ -31,21 +31,23 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="{{asset('assets/dist/img/logo i.jpeg')}}" alt="AdminLTELogo" height="360" width="360">
   </div>
 
   <!-- Navbar -->
- @include('layouts.partials.nav')
-  <!-- End navbar -->
+
+  <!-- End Navbar -->
+  @include('layouts.partials.navbar')
+  <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  @include('layouts.partials.sidebar')
-  <!-- end main sidebar --!>
+  @include('layouts.partials.slidebar')
+  <!-- end main sidebar-->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-       @yield('header')
+   @yield('header')
     <!-- /.content-header -->
 
     <!-- Main content -->
@@ -55,8 +57,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+  <footer class="main-footer navbar-navy" >
+    <strong>Copyright &copy; 2021-2022 <a href="https://adminlte.io">Pariwisata</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0

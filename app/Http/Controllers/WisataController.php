@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\wisata;
 use Illuminate\Http\Request;
 
-class WisataController extends Controller
+class wisataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +15,8 @@ class WisataController extends Controller
     public function index()
     {
         //
+        $wisata = Wisata::all();
+        return view('admin.wisata.index', compact('wisata'));
     }
 
     /**
@@ -25,6 +27,7 @@ class WisataController extends Controller
     public function create()
     {
         //
+        return view('admin.wisata.create');
     }
 
     /**
@@ -35,7 +38,14 @@ class WisataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama_wisata' => 'required',
+        ]);
+
+        $wisata = new Wisata;
+        $wisata->nama_wisata = $request->nama_wisata;
+        $wisata->save();
+        return redirect()->route('wisata.index');
     }
 
     /**
@@ -44,9 +54,12 @@ class WisataController extends Controller
      * @param  \App\Models\wisata  $wisata
      * @return \Illuminate\Http\Response
      */
-    public function show(wisata $wisata)
+    public function show($id)
     {
         //
+        $wisata = Wisata::findOrFail($id);
+        return view('admin.wisata.show', compact('wisata'));
+
     }
 
     /**
@@ -55,9 +68,11 @@ class WisataController extends Controller
      * @param  \App\Models\wisata  $wisata
      * @return \Illuminate\Http\Response
      */
-    public function edit(wisata $wisata)
+    public function edit($id)
     {
         //
+        $wisata = Wisata::findOrFail($id);
+        return view('admin.wisata.edit', compact('wisata'));
     }
 
     /**
@@ -67,9 +82,17 @@ class WisataController extends Controller
      * @param  \App\Models\wisata  $wisata
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, wisata $wisata)
+    public function update(Request $request, $id)
     {
         //
+        $validated = $request->validate([
+            'nama_wisata' => 'required',
+        ]);
+
+        $wisata = Wisata::findOrFail($id);
+        $wisata->nama_wisata = $request->nama_wisata;
+        $wisata->save();
+        return redirect()->route('wisata.index');
     }
 
     /**
@@ -78,8 +101,11 @@ class WisataController extends Controller
      * @param  \App\Models\wisata  $wisata
      * @return \Illuminate\Http\Response
      */
-    public function destroy(wisata $wisata)
+    public function destroy($id)
     {
         //
+        $wisata = Wisata::findOrFail($id);
+        $wisata->delete();
+        return redirect()->route('wisata.index');
     }
 }
