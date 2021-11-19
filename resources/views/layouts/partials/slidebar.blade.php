@@ -1,9 +1,9 @@
 <aside class="main-sidebar navbar-navy">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <div class="brand-link">
       <img src="{{asset('assets/dist/img/m.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Informasi  Wisata</span>
-    </a>
+    </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -14,7 +14,7 @@
         </div>
         <div class="info">
           @auth
-          <a href="#" class="d-block"> {{Auth::user()->name}}</a>
+          <div class="d-block"> {{Auth::user()->name}}</div>
           @else
           <a href="#" class="d-block">Member</a>
           @endauth
@@ -48,6 +48,12 @@
                 <a href="{{route('destinasi.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Destinasi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('galery.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galeri</p>
                 </a>
               </li>
 
