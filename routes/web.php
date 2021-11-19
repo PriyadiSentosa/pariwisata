@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WisataController;
 use App\Http\Controllers\DestinasiController;
-use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\KategoriController;
+
 
 
 
@@ -36,6 +37,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function
     });
     Route::resource('wisata', WisataController::class);
     Route::resource('destinasi', DestinasiController::class);
-    Route::resource('galery', GaleryController::class);
+    Route::resource('kategori', KategoriController::class);
 
 });

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             Destinasiseeder::class,
             Wisataseeder::class,
-            Galeryseeder::class,
+            Kategoriseeder::class,
 
         ]);
         //jalankan perintah

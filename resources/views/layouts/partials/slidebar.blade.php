@@ -51,9 +51,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('galery.index')}}" class="nav-link">
+                <a href="{{route('kategori.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Galeri</p>
+                  <p>Kategori</p>
                 </a>
               </li>
 
