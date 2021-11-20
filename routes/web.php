@@ -29,14 +29,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+Route::resource('destinasi', DestinasiController::class);
+Route::resource('kategori', KategoriController::class);
 //admin Ruote
 Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'role:admin']], function (){
     Route::get('/', function (){
         return view('admin.index');
     });
     Route::resource('wisata', WisataController::class);
-    Route::resource('destinasi', DestinasiController::class);
-    Route::resource('kategori', KategoriController::class);
-
 });

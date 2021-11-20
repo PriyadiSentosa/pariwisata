@@ -4,7 +4,9 @@
     <div class="container-header">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <h1 class="m-0"> Data Kategori</h1>
+                <div class="card-header">
+                    <center>  <h3 class="m-0"><b><i>Data Kategori</i></b></h3></center>
+                  </div>
             </div>
         </div>
     </div>

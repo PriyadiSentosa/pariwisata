@@ -3,8 +3,10 @@
 <div class="content-headear">
     <div class="container-fluid">
         <div class="row mb-2">
-            <div class="card-header">
-              <center>  <h3 class="m-0"><b><i>Foto Kategori Wisata</i></b></h3></center>
+               <div class="col sm-12">
+                <div class="card-header">
+                   <center>  <h3 class="m-0"><b><i>Foto Kategori Wisata</i></b></h3></center>
+                </div>
             </div>
         </div>
     </div>
