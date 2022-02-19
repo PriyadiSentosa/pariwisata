@@ -27,7 +27,7 @@
                         <input type="text" name="nama_kota" value="{{$destinasi->nama_kota}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Nama Wisata</label>
+                        <label for="">Nama tempat Wisata</label>
                         <input type="text" name="" class="form-control" value="{{$destinasi->wisata->nama_wisata}}" readonly>
                     </div>
                     <div class="form-group">
@@ -44,7 +44,7 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="">Thumbnail</label>
+                        <label for="">Gambar Tempat Wisata</label>
                         <br>
                         <img src="{{ $destinasi->image() }}" style="width:350px; height:350px; padding:10px;" />
                     </div>

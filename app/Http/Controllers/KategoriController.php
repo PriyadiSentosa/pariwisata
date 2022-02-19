@@ -73,10 +73,10 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit($id)
     {
-        //
-
+        $kategori = Kategori::findOrFail($id);
+            return view('admin.kategori.edit' , compact('kategori'));
     }
 
     /**
@@ -86,9 +86,23 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, $id)
     {
-        //
+        // $request->validate([
+        //     'kategori'=>'required',
+        //     'cover' => 'required|image|max:2048',
+        // ]);
+        $kategori = Kategori::findOrFail($id);
+        $kategori->kategori = $request->kategori;
+        // upload image / foto
+        if ($request->hasFile('cover')) {
+            $image = $request->file('cover');
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('images/kategoris/', $name);
+            $kategori->cover = $name;
+        }
+        $kategori->save();
+        return redirect()->route('kategori.index');
 
     }
 

@@ -29,11 +29,11 @@
                                 <th>Nomor</th>
                                 <th>Nama Provinsi</th>
                                 <th>Nama Kota</th>
+                                <th>Nama tempat Wisata</th>
                                 <th>Kategori</th>
-                                <th>Nama Wisata</th>
                                 <th>Tiket Masuk</th>
                                 <th>Alamat</th>
-                                <th>Thumbnail</th>
+                                <th>Gambar Tempat Wisata </th>
                                 <th>Aksi</th>
                             </tr>
                             @php $no=1; @endphp

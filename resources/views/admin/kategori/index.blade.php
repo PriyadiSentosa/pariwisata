@@ -28,7 +28,7 @@
                             <tr>
                                 <th>Nomor</th>
                                 <th>Kategori</th>
-                                <th>Thumbnail</th>
+                                <th>Gambar Tempat Wisata</th>
                                 <th>Aksi</th>
                             </tr>
                             @php $no=1; @endphp
@@ -41,6 +41,8 @@
                                     <form action="{{route('kategori.destroy',$data->id)}}" method="post">
                                         @method('delete')
                                         @csrf
+                                        <a href="{{route('kategori.edit',$data->id)}}" class="btn btn-outline-info">Edit</a>
+                                        <a href="{{route('kategori.show',$data->id)}}" class="btn btn-outline-warning">Show</a>
                                         <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin menghapus ini?');">Delete</button>
                                     </form>
                                 </td>

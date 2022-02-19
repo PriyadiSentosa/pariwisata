@@ -39,7 +39,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Nama Wisata</label>
+                            <label for="">Nama tempat Wisata</label>
                             <select name="wisata_id" class="form-control @error('wisata_id') is-invalid @enderror" >
                                 @foreach($wisata as $data)
                                     <option value="{{$data->id}}">{{$data->nama_wisata}}</option>
